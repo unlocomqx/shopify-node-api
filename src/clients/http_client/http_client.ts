@@ -126,7 +126,7 @@ class HttpClient {
       }
     }
 
-    const schema = process.env.NODE_ENV === 'test' ? 'http' : 'https';
+    const schema = process.env.E2ETESTS === '1' ? 'http' : 'https';
     const url = `${schema}://${this.domain}${this.getRequestPath(
       params.path,
     )}${ProcessedQuery.stringify(params.query)}`;
